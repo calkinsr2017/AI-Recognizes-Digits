@@ -30,3 +30,6 @@ Hidden layer can be anything. Good to go off percentage of previous layer. For t
 3. Live Rock paper scissors (Make the computer always win be recognizing hands super fast)
 4. Automate tesla tickle (https://www.urbandictionary.com/define.php?term=Tesla%20Tickle)
 
+
+Plan of action! I, Robert, am going to make a handwritten digit recognizer. I will use either, pygame, TKinter or some other method
+to draw on a canvas. Then use ImageGrab to get a 28x28 pic to get into the model. 

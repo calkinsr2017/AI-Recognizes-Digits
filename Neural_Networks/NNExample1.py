@@ -1,4 +1,5 @@
 import warnings  
+from PIL import Image, ImageFilter
 with warnings.catch_warnings():  
     warnings.filterwarnings("ignore",category=FutureWarning)
     import tensorflow as tf 
@@ -6,9 +7,9 @@ with warnings.catch_warnings():
     import numpy as np 
     import matplotlib.pyplot as plt 
     import pickle
-
 #This is a simple example of a NN using the glothing dataset on keras. It is a picture based data. You can see what
 #The data looks like by uncommenting the plt plots below. 
+
 RETRAIN = False
 
 #######################
@@ -23,8 +24,7 @@ data = keras.datasets.mnist #built in dataset for different clothings
 class_names = ['zero', 'one', 'two', 'three', 'four', 
                 'five', 'six', 'seven', 'eight', 'nine']
 
-plt.imshow(train_images[7], cmap=plt.cm.binary) #shows the image
-plt.show()
+
 
 train_images = train_images/255.0  #gets the greyscale value to be between 0 and 1. Its in a numpy array so this works
 test_images = test_images/255.0
@@ -52,15 +52,26 @@ def loadModel(retrain:bool):
 
 model = loadModel(RETRAIN)
 
-prediction = model.predict(test_images)
+img = tf.keras.preprocessing.image.load_img("image1.png", target_size = (28,28))
+thresh = 200
+fn = lambda x : 255 if x > thresh else 0
+img = img.convert('L').point(fn, mode='1')
+plt.imshow(img)
+plt.show()
+arr= np.array(img)
+arr = np.expand_dims(arr, axis=0)
+prediction = model.predict(arr)
 
-for i in range(10, 15):
-    specific = class_names[np.argmax(prediction[i])]
-    plt.grid(False)
-    plt.imshow(test_images[i], cmap = plt.cm.binary)
-    plt.xlabel("Actual: " + class_names[test_labels[i]])
-    plt.title("Prediction "+ specific)
-    plt.show()
+print(prediction[0])
+print(class_names[np.argmax(prediction[0])])
+
+# for i in range(10, 15):
+#     specific = class_names[np.argmax(prediction[i])]
+#     plt.grid(False)
+#     plt.imshow(test_images[i], cmap = plt.cm.binary)
+#     plt.xlabel("Actual: " + class_names[test_labels[i]])
+#     plt.title("Prediction "+ specific)
+#     plt.show()
     
 
 
