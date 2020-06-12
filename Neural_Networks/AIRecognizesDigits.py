@@ -3,10 +3,7 @@ from PIL import Image, ImageGrab
 from tkinter import messagebox
 import keras
 import tensorflow as tf
-import matplotlib.pyplot as plt
 import numpy as np
-import logging
-
 
 class Paint:
     def __init__(self):
