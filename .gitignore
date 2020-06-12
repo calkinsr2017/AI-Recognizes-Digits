@@ -1,4 +1,6 @@
 venv
 .vscode/
-model_accuracy.pickle
-studentmodel.pickle
+Figure_1.png
+.Neural_Networks/image1.eps
+.Neural_Networks/image1.png
+
