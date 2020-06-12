@@ -27,7 +27,7 @@ class Neural:
         print("prepared")
     
     def createModel(self):
-        self.model.add(tf.keras.layers.Flatten())
+        self.model.add(tf.keras.layers.Flatten(input_shape=(28,28)))
         self.model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Dense(128, activation=tf.nn.relu))
         self.model.add(tf.keras.layers.Dense(10, activation=tf.nn.softmax))
@@ -47,5 +47,5 @@ if __name__ == '__main__':
     nn = Neural()
     nn.prepareData()
     nn.createModel()
-    nn.trainAndSave(retrain = False)
+    nn.trainAndSave(retrain = True)
     print("saved")
