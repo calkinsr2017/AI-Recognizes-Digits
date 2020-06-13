@@ -17,5 +17,9 @@ TKinter, TersorFlow and numpy are the main modules used. I took inspiration from
 
 ## Moving forward
 
-This was my first ML project, while I am proud of the final result there are still many improvements that can be made as I learn more about ML. The model has low accuracy when the input digits are less then perfect, and still has trouble recognizing six's and nine's. 
+This was my first ML project, while I am proud of the final result there are still many improvements that can be made as I learn more about ML. The model has low accuracy when the input digits are less then perfect, and still has trouble recognizing seven's and nine's. I did a small test to see how accurate the model was with each digit. While still attempting to draw decent digits with small variations, the model had the following accuracy:
+
+<p align="center">
+<img src="https://github.com/calkinsr2017/AI-Recognizes-Digits/blob/master/Images/meta-chart.png" width="500" height="300">
+</p>
   
