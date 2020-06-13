@@ -33,7 +33,7 @@ class Paint:
     def initilizeNN(self):
         data = tf.keras.datasets.mnist
         (x_train, y_train), (x_test, y_test) = data.load_data()
-        self.model = tf.keras.models.load_model("mnist_model.model")
+        self.model = tf.keras.models.load_model("mnist_model.h5")
 
         self.x_test = x_test
 

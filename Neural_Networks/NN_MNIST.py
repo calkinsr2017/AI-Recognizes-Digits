@@ -40,8 +40,8 @@ class Neural:
 
     def trainAndSave(self, retrain = False):
         if(retrain):
-            self.model.fit(self.x_train, self.y_train, epochs=5)
-            self.model.save('mnist_model.model')
+            self.model.fit(self.x_train, self.y_train, epochs=10)
+            self.model.save('mnist_model.h5')
 
 if __name__ == '__main__':
     nn = Neural()
