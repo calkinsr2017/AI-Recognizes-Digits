@@ -23,3 +23,4 @@ This was my first ML project, while I am proud of the final result there are sti
 <img src="https://github.com/calkinsr2017/AI-Recognizes-Digits/blob/master/Images/meta-chart.png" width="500" height="300">
 </p>
   
+Since I trained the model using the MNIST dataset and not my own, the model is not used to the format I have given it. As I continue to learn about ML, I will come back to this project in order to gradually retrain the model with my own generated data.
